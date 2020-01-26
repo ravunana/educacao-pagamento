@@ -1,0 +1,85 @@
+{
+    "name": "Deposito",
+    "fields": [
+        {
+            "fieldName": "numero",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "unique"
+            ]
+        },
+        {
+            "fieldName": "dataDeposito",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "montante",
+            "fieldType": "BigDecimal",
+            "fieldValidateRules": [
+                "min",
+                "required"
+            ],
+            "fieldValidateRulesMin": 0
+        },
+        {
+            "fieldName": "data",
+            "fieldType": "ZonedDateTime",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "anexo",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any"
+        },
+        {
+            "fieldName": "numeroProcesso",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "meioLiquidacao",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "caixa",
+            "otherEntityRelationshipName": "deposito",
+            "relationshipValidateRules": "required",
+            "relationshipName": "bancoCaixa",
+            "otherEntityField": "descricao"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "efeitoPagamento",
+            "otherEntityRelationshipName": "deposito",
+            "relationshipName": "efeito",
+            "otherEntityField": "id",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20200126141926",
+    "entityTableName": "deposito",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "pagamento",
+    "applications": "*",
+    "microserviceName": "pagamento",
+    "searchEngine": "elasticsearch"
+}

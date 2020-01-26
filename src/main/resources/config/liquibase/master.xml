@@ -14,6 +14,16 @@
     <property name="uuidType" value="varchar(36)" dbms="h2, mysql, mariadb"/>
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200126141923_added_entity_FormaLiquidacao.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200126141924_added_entity_Caixa.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200126141925_added_entity_Emolumento.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200126141926_added_entity_Deposito.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200126141927_added_entity_PagamentoEmolumento.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200126141928_added_entity_EfeitoPagamento.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200126141929_added_entity_ContaAluno.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20200126141926_added_entity_constraints_Deposito.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200126141927_added_entity_constraints_PagamentoEmolumento.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200126141928_added_entity_constraints_EfeitoPagamento.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

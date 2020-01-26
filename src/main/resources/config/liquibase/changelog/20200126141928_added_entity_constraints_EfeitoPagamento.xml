@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity EfeitoPagamento.
+    -->
+    <changeSet id="20200126141928-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="efeito_pagamento_id"
+                                 baseTableName="efeito_pagamento_deposito"
+                                 constraintName="fk_efeito_pagamento_deposito_efeito_pagamento_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="efeito_pagamento"/>
+
+        <addForeignKeyConstraint baseColumnNames="deposito_id"
+                                 baseTableName="efeito_pagamento_deposito"
+                                 constraintName="fk_efeito_pagamento_deposito_deposito_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="deposito"/>
+        
+        <addForeignKeyConstraint baseColumnNames="emolumento_id"
+                                 baseTableName="efeito_pagamento"
+                                 constraintName="fk_efeito_pagamento_emolumento_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="emolumento"/>
+
+        <addForeignKeyConstraint baseColumnNames="pagamento_id"
+                                 baseTableName="efeito_pagamento"
+                                 constraintName="fk_efeito_pagamento_pagamento_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="pagamento_emolumento"/>
+
+    </changeSet>
+</databaseChangeLog>

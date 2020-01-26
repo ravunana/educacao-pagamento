@@ -1,0 +1,104 @@
+{
+    "name": "EfeitoPagamento",
+    "fields": [
+        {
+            "fieldName": "descricao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "quantidade",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required",
+                "min"
+            ],
+            "fieldValidateRulesMin": 1
+        },
+        {
+            "fieldName": "montante",
+            "fieldType": "BigDecimal",
+            "fieldValidateRules": [
+                "required",
+                "min"
+            ],
+            "fieldValidateRulesMin": 0
+        },
+        {
+            "fieldName": "desconto",
+            "fieldType": "Double",
+            "fieldValidateRules": [
+                "min"
+            ],
+            "fieldValidateRulesMin": 0
+        },
+        {
+            "fieldName": "multa",
+            "fieldType": "Double",
+            "fieldValidateRules": [
+                "min"
+            ],
+            "fieldValidateRulesMin": 0
+        },
+        {
+            "fieldName": "juro",
+            "fieldType": "Double",
+            "fieldValidateRules": [
+                "min"
+            ],
+            "fieldValidateRulesMin": 0
+        },
+        {
+            "fieldName": "data",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "vencimento",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "quitado",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "deposito",
+            "otherEntityRelationshipName": "efeito",
+            "relationshipName": "deposito",
+            "otherEntityField": "numero",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "emolumento",
+            "otherEntityRelationshipName": "efeitoPagamento",
+            "relationshipValidateRules": "required",
+            "relationshipName": "emolumento",
+            "otherEntityField": "nome"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "pagamentoEmolumento",
+            "otherEntityRelationshipName": "efeitoPagamento",
+            "relationshipValidateRules": "required",
+            "relationshipName": "pagamento",
+            "otherEntityField": "numero"
+        }
+    ],
+    "changelogDate": "20200126141928",
+    "entityTableName": "efeito_pagamento",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "pagamento",
+    "applications": "*",
+    "microserviceName": "pagamento",
+    "searchEngine": "elasticsearch"
+}

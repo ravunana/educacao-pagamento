@@ -1,0 +1,62 @@
+{
+    "name": "Caixa",
+    "fields": [
+        {
+            "fieldName": "descricao",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "unique"
+            ]
+        },
+        {
+            "fieldName": "proprietario",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "numeroConta",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "unique",
+                "required"
+            ]
+        },
+        {
+            "fieldName": "iban",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "unique"
+            ]
+        },
+        {
+            "fieldName": "ativo",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "deposito",
+            "otherEntityRelationshipName": "bancoCaixa",
+            "relationshipName": "deposito"
+        }
+    ],
+    "changelogDate": "20200126141924",
+    "entityTableName": "caixa",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "pagamento",
+    "applications": "*",
+    "microserviceName": "pagamento",
+    "searchEngine": "elasticsearch"
+}

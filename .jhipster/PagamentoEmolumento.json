@@ -1,0 +1,70 @@
+{
+    "name": "PagamentoEmolumento",
+    "fields": [
+        {
+            "fieldName": "data",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "numero",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "unique",
+                "required"
+            ]
+        },
+        {
+            "fieldName": "numeroProcesso",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "nomeAluno",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "turmaAluno",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "estado",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "efeitoPagamento",
+            "otherEntityRelationshipName": "pagamento",
+            "relationshipName": "efeitoPagamento"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "formaLiquidacao",
+            "otherEntityRelationshipName": "pagamentoEmolumento",
+            "relationshipValidateRules": "required",
+            "relationshipName": "formaLiquidacao",
+            "otherEntityField": "nome"
+        }
+    ],
+    "changelogDate": "20200126141927",
+    "entityTableName": "pagamento_emolumento",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "pagamento",
+    "applications": "*",
+    "microserviceName": "pagamento",
+    "searchEngine": "elasticsearch"
+}

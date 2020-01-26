@@ -1,0 +1,80 @@
+{
+    "name": "Emolumento",
+    "fields": [
+        {
+            "fieldName": "nome",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "unique"
+            ]
+        },
+        {
+            "fieldName": "montante",
+            "fieldType": "BigDecimal",
+            "fieldValidateRules": [
+                "required",
+                "min"
+            ],
+            "fieldValidateRulesMin": 0
+        },
+        {
+            "fieldName": "montanteMulta",
+            "fieldType": "Double",
+            "fieldValidateRules": [
+                "required",
+                "min"
+            ],
+            "fieldValidateRulesMin": 0
+        },
+        {
+            "fieldName": "tempoMulta",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required",
+                "min"
+            ],
+            "fieldValidateRulesMin": 0
+        },
+        {
+            "fieldName": "quantidade",
+            "fieldType": "Double",
+            "fieldValidateRules": [
+                "min"
+            ],
+            "fieldValidateRulesMin": 0
+        },
+        {
+            "fieldName": "turno",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "classe",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "curso",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "efeitoPagamento",
+            "otherEntityRelationshipName": "emolumento",
+            "relationshipName": "efeitoPagamento"
+        }
+    ],
+    "changelogDate": "20200126141925",
+    "entityTableName": "emolumento",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "pagamento",
+    "applications": "*",
+    "microserviceName": "pagamento",
+    "searchEngine": "elasticsearch"
+}

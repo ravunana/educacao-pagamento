@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity PagamentoEmolumento.
+    -->
+    <changeSet id="20200126141927-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="forma_liquidacao_id"
+                                 baseTableName="pagamento_emolumento"
+                                 constraintName="fk_pagamento_emolumento_forma_liquidacao_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="forma_liquidacao"/>
+
+    </changeSet>
+</databaseChangeLog>
