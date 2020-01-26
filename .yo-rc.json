@@ -1,0 +1,42 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.ravunana.educacao.pagamento",
+      "nativeLanguage": "pt-pt"
+    },
+    "jhipsterVersion": "6.6.0",
+    "applicationType": "microservice",
+    "baseName": "pagamento",
+    "packageName": "com.ravunana.educacao.pagamento",
+    "packageFolder": "com/ravunana/educacao/pagamento",
+    "serverPort": "8083",
+    "authenticationType": "uaa",
+    "uaaBaseName": "uaa",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": "elasticsearch",
+    "messageBroker": "kafka",
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "ZmUyNzJlZTM1ZWQxNzc0ZWQ1OWZjMzhjN2VjZTRmYmY3NTM2OWFiOTljMzQxN2VjM2RjZGQ5MTlhYTRkM2I5NTcyYTJlM2U5ZDZiZTQ5YmIxODZkZmIxNzYxNTQyOWY3MzQ4ZGY4NjExMDM1Yjg5MDViMTNhNTY5MTJmNWZmMmQ=",
+    "embeddableLaunchScript": false,
+    "creationTimestamp": 1580047194760,
+    "testFrameworks": ["gatling", "cucumber"],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "clientPackageManager": "npm",
+    "nativeLanguage": "pt-pt",
+    "languages": ["pt-pt"],
+    "blueprints": [],
+    "skipClient": true,
+    "skipUserManagement": true
+  }
+}
